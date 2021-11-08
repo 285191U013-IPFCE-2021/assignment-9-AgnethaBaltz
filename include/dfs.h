@@ -1,5 +1,6 @@
 #include <stdbool.h>		/* bool, true, false */
 
+//Binary tree node, has data, pointer to left and right child and registeres if visited
 typedef struct node
 {
   int num;
@@ -19,6 +20,7 @@ void print_tree (node * p, int depth);
 
 void DFT (node * root);
 
+//Stack node. Containing pointer to tree node and next stack node
 typedef struct stack
 {
   struct node *node;
@@ -26,12 +28,12 @@ typedef struct stack
 } stack;
 
 
-stack *push (stack * topp, node * node);
+void push (stack ** topp, node * node);
 
 bool isEmpty (stack * topp);
 
 node *top (stack * topp);
 
-stack *pop (stack * topp);
+node *pop (stack ** topp);
 
 void print_stack (stack * topp);
